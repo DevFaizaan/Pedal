@@ -1,12 +1,12 @@
-const asyncHandler = require('express-async-handler');
+const asyncHandler = require('express-async-handler');  //have functions in controller
 
 const receiptSchema = require('../model/createReceiptModel');
 // @desc  Get receipt
 // @route  GET /api/createReceipt
-// @access Provate
-const getReceipt = asyncHandler(async (req, res) => {
-  const schema = await receiptSchema.find();
-  res.status(200).json(schema);
+// @access Private after authentication
+const getReceipt = asyncHandler(async (req, res) => {  //would need to use try catch if not using asyncHandler 
+  const schema = await receiptSchema.find();   //async await to used for external request and u dont know how long it will take to respond
+  res.status(200).json(schema); //univeral standard for communicating with REST apis
 });
 
 // @desc   Set receipt

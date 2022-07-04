@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const createReceiptScheme = mongoose.Schema(
+const createReceiptScheme = mongoose.Schema(  //blueprint for creating objects similar to classes in OOP
   {
     text: {
       type: String,
@@ -21,4 +21,4 @@ const createReceiptScheme = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('createSchema', createReceiptScheme);
+module.exports = mongoose.model('createSchema', createReceiptScheme); //converts the schema into a model
